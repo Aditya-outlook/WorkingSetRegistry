@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+ 
+<databaseChangeLog
+  xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+         http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-2.0.xsd">
+	
+	<changeSet id="1" author="Aditya">
+		<createTable tableName="nedata">
+			<column name="id" type="varchar(20)">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+			<column name="type" type="varchar(20)">
+                <constraints nullable="true"/>
+            </column>
+			<column name="parentid" type="varchar(20)">
+                <constraints nullable="true"/>
+            </column>
+			<column name="scopeid" type="varchar(20)">
+				 <constraints foreignkey="true" nullable="true"/>
+			</column>
+			<column name="latitude" type="varchar(20)">
+                <constraints nullable="true"/>
+            </column>
+			<column name="longitude" type="varchar(20)">
+				 <constraints nullable="true"/>
+			</column>
+			<column name="swversion" type="varchar(10)">
+                <constraints nullable="true"/>
+            </column>
+			<column name="technology" type="varchar(20)">
+				 <constraints nullable="true"/>
+			</column>
+			<column name="presentationname" type="varchar(50)">
+                <constraints nullable="true"/>
+            </column>
+        </createTable>
+		
+		<!---->
+		<createTable tableName="scope">
+			<column name="id" type="varchar(20)">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="presentationname" type="varchar(50)">
+                <constraints nullable="true"/>
+            </column>
+        </createTable>		
+    </changeSet>
+ 
+</databaseChangeLog>
